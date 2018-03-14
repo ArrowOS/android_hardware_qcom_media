@@ -5,10 +5,14 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
         C2DColorConverter.cpp
 
+LOCAL_CFLAGS += -Wno-error
+
 LOCAL_C_INCLUDES := \
     $(TARGET_OUT_HEADERS)/qcom/display
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
+
+LOCAL_CFLAGS += -Wno-error
 
 LOCAL_SHARED_LIBRARIES := liblog libdl
 
