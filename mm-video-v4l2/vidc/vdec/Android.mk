@@ -133,7 +133,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE                    := libOmxVdec
 LOCAL_MODULE_TAGS               := optional
 LOCAL_VENDOR_MODULE             := true
-LOCAL_CFLAGS                    := $(libmm-vdec-def) -Werror -Wno-implicit-fallthrough
+LOCAL_CFLAGS                    := $(libmm-vdec-def) -Werror -Wno-implicit-fallthrough 
 
 LOCAL_HEADER_LIBRARIES := \
         media_plugin_headers \
@@ -157,6 +157,7 @@ LOCAL_SRC_FILES         += src/mp4_utils.cpp
 LOCAL_SRC_FILES         += src/hevc_utils.cpp
 LOCAL_STATIC_LIBRARIES  := libOmxVidcCommon
 LOCAL_SRC_FILES         += src/omx_vdec_v4l2.cpp
+LOCAL_CFLAGS            += -Wno-error
 
 include $(BUILD_SHARED_LIBRARY)
 
