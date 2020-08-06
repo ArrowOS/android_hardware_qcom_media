@@ -4,6 +4,9 @@ ifeq ($(call my-dir)/$(TARGET_BOARD_PLATFORM),$(call project-path-for,qcom-media
 ifneq ($(TARGET_BOARD_AUTO),true)
 
   QCOM_MEDIA_ROOT := $(call my-dir)/msm8974
+  ifneq ($(filter msm8994, $(TARGET_BOARD_PLATFORM)),)
+    QCOM_MEDIA_ROOT := $(call my-dir)/msm8974
+  endif
   ifneq ($(filter msm8996, $(TARGET_BOARD_PLATFORM)),)
     QCOM_MEDIA_ROOT := $(call my-dir)/msm8996
   endif
